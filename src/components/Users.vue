@@ -269,10 +269,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.el-breadcrumb {
-  height: 50px;
-  line-height: 50px;
-}
 .el-input {
   width: 300px;
   margin-bottom: 5px;

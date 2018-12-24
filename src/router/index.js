@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Users from '../components/Users.vue'
+import Rights from '../components/Rights.vue'
 
 Vue.use(Router)
 
@@ -23,6 +24,10 @@ const router = new Router({
         {
           path: '/users',
           component: Users
+        },
+        {
+          path: '/rights',
+          component: Rights
         }
       ]
     }
