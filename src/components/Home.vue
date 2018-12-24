@@ -18,13 +18,14 @@
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
-      unique-opened>
+      unique-opened
+      router>
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>用户管理</span>
         </template>
-        <el-menu-item index="1-1">
+        <el-menu-item index="/users">
           <i class="el-icon-menu"></i>
           <span slot="title">用户列表</span>
         </el-menu-item>
@@ -45,7 +46,9 @@
       </el-submenu>
     </el-menu>
     </el-aside>
-    <el-main>Main</el-main>
+    <el-main>
+      <router-view></router-view>
+    </el-main>
   </el-container>
 </el-container>
 </template>
@@ -53,20 +56,19 @@
 <script>
 export default {
   methods: {
-    logout() {
-      this.$confirm('你确定要退出系统吗?', '温馨提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      })
-        .then(() => {
-          this.$message.success('退出成功')
-          localStorage.removeItem('token')
-          this.$router.push('/login')
+    async logout() {
+      try {
+        await this.$confirm('你确定要退出系统吗?', '温馨提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
         })
-        .catch(() => {
-          this.$message.info('取消退出')
-        })
+        this.$message.success('退出成功')
+        localStorage.removeItem('token')
+        this.$router.push('/login')
+      } catch (e) {
+        this.$message.info('取消退出')
+      }
     }
   }
 }

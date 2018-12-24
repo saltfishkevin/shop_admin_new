@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let arr = [1, 2, 3]
+      // let [n1, n2, n3, n5] = arr
+      // console.log(n1, n2, n3, n5)
+
+      // let{name:username,age,gender:gender1}={
+      //   name:'zs',
+      //   age:18,
+      //   gender:'男'
+      // }
+      // console.log(username,age,gender1)
+
+      // var res={
+      //   meta:{
+      //     status:200,
+      //     msg:'登陆成功'
+      //   },
+      //   data:{
+      //     total:6,
+      //     name:'zs'
+      //   }
+      // }
+      // let{meta:{status},data:{total}}=res
+      // console.log(status,total)
+
+      function fn({id,name}){
+        console.log(id)
+        console.log(name)
+      }
+      fn({id:1,name:'zs'})
+    </script>
+  </body>
+</html>
