@@ -35,7 +35,7 @@ export default {
       let { meta: { status }, data } = res
       if (status === 200) {
         this.rightList = data
-        console.log(this.rightList)
+        // console.log(this.rightList)
       }
     }
   },
